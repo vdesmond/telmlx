@@ -1,0 +1,16 @@
+.venv/
+models/
+__pycache__/
+.DS_Store
+logs/
+results/**/*.eval
+results/**/*.jsonl
+.env
+dev.env
+data/tspec/
+data/chunks.jsonl
+data/index.faiss
+data/index.ids.npy
+data/*.partial.npz
+ui/node_modules/
+ui/dist/

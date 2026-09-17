@@ -1,0 +1,27 @@
+[project]
+name = "telmlx"
+version = "0.1.0"
+description = "Offline 3GPP 38-series assistant on Apple silicon: MLX retrieval + generation, GSMA Open-Telco evals"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "evals",
+    "faiss-cpu>=1.15.1",
+    "fastapi>=0.141.1",
+    "httpx>=0.28.1",
+    "huggingface-hub>=1.31.0",
+    "inspect-ai>=0.3.263",
+    "matplotlib>=3.11.2",
+    "mlx-embeddings>=0.1.0",
+    "mlx-lm>=0.31.3",
+    "openai>=3.14.1",
+    "pandas>=3.0.5",
+    "rank-bm25>=0.2.2",
+    "uvicorn>=0.53.0",
+]
+
+[tool.uv.workspace]
+members = ["third_party/gsma-evals"]
+
+[tool.uv.sources]
+evals = { workspace = true }
