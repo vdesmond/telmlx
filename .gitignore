@@ -14,3 +14,6 @@ data/index.ids.npy
 data/*.partial.npz
 ui/node_modules/
 ui/dist/
+data/core-chunks.jsonl
+data/core-index.faiss
+data/core-index.ids.npy

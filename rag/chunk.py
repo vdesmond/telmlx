@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 import glob, json, os, re, sys, collections
 
-SPEC = re.compile(r"^(38\d{3}(?:-\d+)?)-([a-z][0-9a-z]\d)")
+SPEC = re.compile(r"^(\d{5}(?:-\d+)?)-([a-z][0-9a-z]\d)")
 HEAD = re.compile(r"^(#{1,6})\s+(.*?)\s*(?:\{#.*\})?\s*$")
 
 
-def latest_files(root):
+def latest_files(root, series):
     specs = collections.defaultdict(list)
-    for f in glob.glob(f"{root}/Rel-*/38_series/*.md"):
+    for f in (f for s in series for f in glob.glob(f"{root}/Rel-*/{s}_series/*.md")):
         m = SPEC.match(os.path.basename(f))
         if m:
             specs[m.group(1)].append((m.group(2), f))
@@ -37,12 +37,12 @@ def windows(words, size, overlap):
         i += size - overlap
 
 
-def main(root, out, size=350, overlap=60, min_words=25):
+def main(root, out, series=("38",), size=350, overlap=60, min_words=25):
     n = 0
     with open(out, "w") as fo:
-        for f in sorted(latest_files(root)):
+        for f in sorted(latest_files(root, series)):
             spec = SPEC.match(os.path.basename(f)).group(1)
-            spec_id = f"TS 38.{spec[2:5]}" + (f"-{spec[6:]}" if "-" in spec else "")
+            spec_id = f"TS {spec[:2]}.{spec[2:5]}" + (f"-{spec[6:]}" if "-" in spec else "")
             text = open(f, errors="ignore").read()
             for title, body in sections(text):
                 words = body.split()
@@ -52,8 +52,8 @@ def main(root, out, size=350, overlap=60, min_words=25):
                     fo.write(json.dumps({"id": n, "spec": spec_id, "section": title, "part": k,
                                          "text": f"{spec_id} {title}\n" + " ".join(w)}) + "\n")
                     n += 1
-    print(f"{n} chunks from {len(latest_files(root))} files -> {out}")
+    print(f"{n} chunks from {len(latest_files(root, series))} files -> {out}")
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2])
+    main(sys.argv[1], sys.argv[2], tuple(sys.argv[3:]) or ("38",))
