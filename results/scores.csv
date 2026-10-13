@@ -1,0 +1,17 @@
+tag,bench,n,accuracy,parsed,log
+gemma4-e4b,teleqna,1000,0.679,1.0,2026-09-16T18-11-00-00-00_teleqna_4hqXNPfqtgcqzqV9Uc6X7e.eval
+gemma4-e4b,teleqna-specs,200,0.515,1.0,2026-09-16T18-11-00-00-00_teleqna_4hqXNPfqtgcqzqV9Uc6X7e.eval
+gemma4-e4b,teletables,100,0.31,1.0,2026-09-16T18-21-48-00-00_teletables_QKGmmNNE84f29gUC23rFwo.eval
+gemma4-e4b,three_gpp,100,0.25,1.0,2026-09-16T18-23-11-00-00_three-gpp_YMVnMYVK6Qiun3haop4jjc.eval
+gemma4-e4b-8bit,teleqna,1000,0.708,1.0,2026-10-13T14-04-42-00-00_teleqna_XzRdJhExwo2QrLQVAkpA2C.eval
+gemma4-e4b-8bit,teleqna-specs,200,0.58,1.0,2026-10-13T14-04-42-00-00_teleqna_XzRdJhExwo2QrLQVAkpA2C.eval
+gemma4-e4b-8bit,teletables,100,0.26,1.0,2026-10-13T14-16-13-00-00_teletables_Dkbpw9uxdPvJXT5LfWbKYV.eval
+gemma4-e4b-8bit,three_gpp,100,0.25,1.0,2026-10-13T14-17-45-00-00_three-gpp_DeRZhvczbszaSA8fQymtxG.eval
+lora-8bit,teleqna,1000,0.759,1.0,2026-10-13T14-23-55-00-00_teleqna_RPbjnid8xCB4ChJxhmpBnf.eval
+lora-8bit,teleqna-specs,200,0.66,1.0,2026-10-13T14-23-55-00-00_teleqna_RPbjnid8xCB4ChJxhmpBnf.eval
+lora-8bit,teletables,100,0.27,1.0,2026-10-13T17-59-41-00-00_teletables_bQQaQtg2FxzxSD8EqAJJWP.eval
+lora-8bit,three_gpp,100,0.24,1.0,2026-10-13T18-40-48-00-00_three-gpp_mSZypDRpYjGhN8GTHobMNo.eval
+otel-e4b,teleqna,1000,0.608,0.993,2026-09-16T18-27-54-00-00_teleqna_ncxgCB6K8ccwipzwRWWRnN.eval
+otel-e4b,teleqna-specs,200,0.48,0.99,2026-09-16T18-27-54-00-00_teleqna_ncxgCB6K8ccwipzwRWWRnN.eval
+otel-e4b,teletables,100,0.22,1.0,2026-09-16T18-45-49-00-00_teletables_PM656Pr4Aixuo8ipz4MxgJ.eval
+otel-e4b,three_gpp,100,0.0,1.0,2026-09-16T18-47-41-00-00_three-gpp_kpRFgQozG4ej5gq2Q7A5Kw.eval

@@ -17,3 +17,6 @@ ui/dist/
 data/core-chunks.jsonl
 data/core-index.faiss
 data/core-index.ids.npy
+data/teleqna/
+data/smoke-chunks.jsonl
+runs/

@@ -1,0 +1,30 @@
+{
+    "name": "telmlx-lora",
+    "description": "LoRA fine-tune of Gemma-4-E4B on TeleQnA",
+    "request": {
+        "resources": {
+            "gpus": 1,
+            "cpus": 8,
+            "cpuMemoryGb": 64,
+            "gpuModel": [
+                "H200 NVL",
+                "RTX PRO 6000",
+                "A40",
+                "A6000"
+            ],
+            "minCudaVersion": 12
+        },
+        "docker": {
+            "image": "pytorch/pytorch:2.11.0-cuda12.8-cudnn9-runtime",
+            "command": "bash /project_ghent/telmlx/train/run.sh ARGS",
+            "storage": [
+                {
+                    "containerPath": "/project_ghent"
+                }
+            ]
+        },
+        "scheduling": {
+            "interactive": false
+        }
+    }
+}
